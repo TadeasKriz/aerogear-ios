@@ -167,6 +167,19 @@ describe(@"AGPropertyListStorage", ^{
             [[user valueForKey:@"id"] shouldNotBeNil];
 
         });
+        
+        it(@"should save a single object with no id set, even with non mutable dictionary", ^{
+            NSDictionary* user = [NSDictionary dictionaryWithObjectsAndKeys:@"Matthias",@"name", nil];
+            
+            BOOL success = [plistStore save:user error:nil];
+            [[theValue(success) should] equal:theValue(YES)];
+            
+            [[user valueForKey:@"id"] shouldBeNil];
+            
+            NSArray* users = [plistStore readAll];
+            [[users should] haveCountOf:1];
+            
+        });
 
         it(@"should save a single object with no id set and custom id configured", ^{
             NSMutableDictionary* user = [NSMutableDictionary

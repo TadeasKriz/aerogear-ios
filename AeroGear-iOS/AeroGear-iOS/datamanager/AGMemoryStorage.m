@@ -133,12 +133,20 @@
             CFUUIDRef uuid = CFUUIDCreate(NULL);
             NSString *uuidStr = (__bridge_transfer NSString *)CFUUIDCreateString(NULL, uuid);
             CFRelease(uuid);
-            
-            [data setValue:uuidStr forKey:_recordId];
+            if (![data isKindOfClass:[NSMutableDictionary class]]) {
+                NSMutableDictionary* copy = [data mutableCopy];
+                [copy setValue:uuidStr forKey:_recordId];
+                // Modify mutable with uuid and save it. Initial data not updated with id.
+                [_array addObject:copy];
+            } else {
+                // Add uuid and save it
+                [data setValue:uuidStr forKey:_recordId];
+                [_array addObject:data];
+            }
+        } else {
+            // Save object with its own id
+            [_array addObject:data];
         }
-        
-        // add it to our list
-        [_array addObject:data];
     }
 }
 
