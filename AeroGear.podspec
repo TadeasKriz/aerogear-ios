@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/aerogear/aerogear-ios"
   s.license      = 'Apache License, Version 2.0'
   s.author       = "Red Hat, Inc."
-  s.source       = { :git => 'https://github.com/aerogear/aerogear-ios.git', :tag => '1.2.0' }
+  s.source       = { :git => 'https://github.com/aerogear/aerogear-ios.git', :branch=>'AFNetworking.1.3.3' }
   s.platform     = :ios, 5.0
   s.source_files = 'AeroGear-iOS/AeroGear-iOS/**/*.{h,m}'
   s.public_header_files = 'AeroGear-iOS/AeroGear-iOS/AeroGear.h', 'AeroGear-iOS/AeroGear-iOS/config/AGConfig.h', 'AeroGear-iOS/AeroGear-iOS/pipeline/AGPipe.h', 'AeroGear-iOS/AeroGear-iOS/pipeline/AGPipeline.h', 'AeroGear-iOS/AeroGear-iOS/pipeline/AGPipeConfig.h', 'AeroGear-iOS/AeroGear-iOS/pipeline/paging/AGPageConfig.h', 'AeroGear-iOS/AeroGear-iOS/pipeline/AGNSMutableArray+Paging.h', 'AeroGear-iOS/AeroGear-iOS/pipeline/paging/AGPageBodyExtractor.h', 'AeroGear-iOS/AeroGear-iOS/pipeline/paging/AGPageHeaderExtractor.h', 'AeroGear-iOS/AeroGear-iOS/pipeline/paging/AGPageParameterExtractor.h', 'AeroGear-iOS/AeroGear-iOS/pipeline/paging/AGPageWebLinkingExtractor.h', 'AeroGear-iOS/AeroGear-iOS/datamanager/AGStore.h', 'AeroGear-iOS/AeroGear-iOS/datamanager/AGDataManager.h', 'AeroGear-iOS/AeroGear-iOS/datamanager/AGStoreConfig.h', 'AeroGear-iOS/AeroGear-iOS/security/AGAuthenticationModule.h', 'AeroGear-iOS/AeroGear-iOS/security/AGAuthenticator.h', 'AeroGear-iOS/AeroGear-iOS/security/AGAuthConfig.h', 'AeroGear-iOS/AeroGear-iOS/security/AGAuthenticationModuleAdapter.h', 'AeroGear-iOS/AeroGear-iOS/core/AGHttpClient.h'
